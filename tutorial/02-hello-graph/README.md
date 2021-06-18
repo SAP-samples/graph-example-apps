@@ -1,6 +1,6 @@
-# Blog Series - Part 02: Hello Graph
+# SAP Graph Tutorial - Part 02: Hello Graph
 
-This is the code for the SAP Graph Blog Series Part 2: Hello Graph!
+This is the code for the SAP Graph Tutorial [Part 2](https://blogs.sap.com/2021/06/15/part-2-hello-graph-write-your-first-sap-graph-application/): Hello Graph! Write your first SAP Graph Application
 
 ## Requirements
 
