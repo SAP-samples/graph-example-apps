@@ -1,5 +1,8 @@
 # SAP Graph Example Apps
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/graph-example-apps)](https://api.reuse.software/info/github.com/SAP-samples/graph-example-apps)
+
+
 [SAP Graph](https://explore.graph.sap/) is the easy-to-use API for the data of the Intelligent Enterprise from SAP. It provides an intuitive programming model that you can use to easily build new extensions and applications using SAP data.
 
 This repository contains example applications using SAP Graph.
@@ -16,7 +19,7 @@ Please refer to the instructions in the examples on how to setup and run them.
 ## How to obtain support
 
 [Create an issue](https://github.com/SAP-samples/graph-example-apps/issues) in this repository if you find a bug or have questions about the content.
- 
+
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
 ## License
