@@ -1,9 +1,14 @@
 # SAP Graph Example Apps
 
+[SAP Graph](https://explore.graph.sap/) is the easy-to-use API for the data of the Intelligent Enterprise from SAP. It provides an intuitive programming model that you can use to easily build new extensions and applications using SAP data.
+
 This repository contains example applications using SAP Graph.
 
-- [SAP Graph Tutorial](https://blogs.sap.com/2021/06/08/sap-graph-multi-part-tutorial-information-map/) examples:
+## Examples
+
+- SAP Graph Tutorial (follow [here](https://blogs.sap.com/2021/06/08/sap-graph-multi-part-tutorial-information-map/)):
     - [Part 2: Hello Graph!](tutorial/02-hello-graph)
+    - Part 3: Authentication (coming soon...)
 
 Please refer to the instructions in the examples on how to setup and run them.
 
