@@ -6,8 +6,9 @@ This repository contains example applications using SAP Graph.
 
 ## Examples
 
-- SAP Graph Tutorial (follow [here](https://blogs.sap.com/2021/06/08/sap-graph-multi-part-tutorial-information-map/)):
-    - [Part 2: Hello Graph!](tutorial/02-hello-graph)
+- [SAP Graph Tutorial](https://blogs.sap.com/2021/06/08/sap-graph-multi-part-tutorial-information-map/):
+    - [Part 1: Introduction to SAP Graph](https://blogs.sap.com/2021/06/08/part-1-introduction-to-sap-graph/)
+    - [Part 2: Hello Graph!](https://blogs.sap.com/2021/06/15/part-2-hello-graph-write-your-first-sap-graph-application/) [[code](tutorial/02-hello-graph)]
     - Part 3: Authentication (coming soon...)
 
 Please refer to the instructions in the examples on how to setup and run them.
