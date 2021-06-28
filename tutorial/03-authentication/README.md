@@ -12,7 +12,7 @@ This is the code for the SAP Graph Tutorial [Part 3](https://blogs.sap.com/2021/
 1. Clone the repository
 2. Add your credentials key-file as `src/credentials.json`
 3. Run `npm install`
-4. Run `node helloQuotes.js`
+4. Run `node src/helloQuotes.js`
 5. Open your browser and navigate to [http://localhost:3003](http://localhost:3003/)
 
 For more information please refer to this [README](../../README.md)

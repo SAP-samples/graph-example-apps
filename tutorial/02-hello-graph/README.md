@@ -10,7 +10,7 @@ This is the code for the SAP Graph Tutorial [Part 2](https://blogs.sap.com/2021/
 
 1. Clone the repository
 2. Run `npm install`
-3. Run `node hellograph.js`
+3. Run `node src/hellograph.js`
 4. Open your browser and navigate to [http://localhost:3004/sap.odm.sales/CustomerQuote?$top=2](http://localhost:3004/sap.odm.sales/CustomerQuote?$top=2)
 
 For more information please refer to this [README](../../README.md)
