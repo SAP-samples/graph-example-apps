@@ -15,12 +15,12 @@ Do you have any feedback how we can best support your development activities? Pl
 
 ## 🛠 Tools 
 * SAP Graph Business Data Graph 
-- Public Trial: `https://api-sandbox.graph.sap/api/v1`
+  - Public Trial: `https://api-sandbox.graph.sap/api/v1`
 * [SAP API Hub](https://api.sap.com)
 * Any Webbrowser
-- recommended: [Chrome](https://www.google.com/chrome/)
+  - recommended: [Chrome](https://www.google.com/chrome/)
 * Any Text Editor/IDE of your choice
-- recommended: [Visual Studio Code](https://code.visualstudio.com/)
+  - recommended: [Visual Studio Code](https://code.visualstudio.com/)
 * [Fiori Fundamentals CSS Library](https://sap.github.io/fundamental-styles/)
 
 ## 👩‍🎓 How
