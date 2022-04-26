@@ -8,6 +8,10 @@ SAP Graph aims to be compatible with as many open-source or commercial framework
 
 Do you have any feedback how we can best support your development activities? Please reach out to us 📬 
 
+## 📊 App scope
+![App Goal](other/salesquote_mock.png)
+Your company sells many products to its corporate customers. Your boss is interested in understanding how his sales team positions baskets of the most popular products (by quantity) at your largest customers. She asks you to quickly create a small app to explore this relationship.
+
 ## ℹ️ Prerequisits
 * Basic understanding of HTML
 * Basic understanding of JavaScript
@@ -26,6 +30,3 @@ Do you have any feedback how we can best support your development activities? Pl
 ## 👩‍🎓 How
 See participant [handout here](./Workshop_Handout.pdf)
 
-## 📊 App scope
-![App Goal](other/salesquote_mock.png)
-Your company sells many products to its corporate customers. Your boss is interested in understanding how his sales team positions baskets of the most popular products (by quantity) at your largest customers. She asks you to quickly create a small app to explore this relationship.
