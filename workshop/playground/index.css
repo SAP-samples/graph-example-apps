@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+
+div {
+  transition: visibility 1s, opacity 0.5s linear;
+}
+
+li {
+  justify-content: space-between;
+}
+
+h2 {
+  font-family: "40", "40full", Arial, Helvetica, sans-serif;
+  font-family: var(
+    --sapFontFamily,
+    "40",
+    "40full",
+    Arial,
+    Helvetica,
+    sans-serif
+  );
+}
+
+p {
+  font-family: "24", "24full", Arial, Helvetica, sans-serif;
+  font-family: var(
+    --sapFontFamily,
+    "24",
+    "24full",
+    Arial,
+    Helvetica,
+    sans-serif
+  );
+}
+
+#content {
+  max-width: 80%;
+  margin: auto;
+}
+
+#customers-section {
+  height: 46vh;
+  overflow: scroll;
+}
+
+#products-section {
+  height: 26vh;
+  overflow: scroll;
+}
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sap-style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body onload="fetchSalesQuotes()">
+    <div class="fd-shellbar">
+        <span class="fd-shellbar__title"> SAP Graph Sales Explorer</span>
+    </div>
+    <div id="content">
+        <div id="customers-section">
+            <h2> Sales Quotes </h2>
+            <pre><code id="dumpQuotes" class="fd-code"></code></pre>
+            <ul id="customers-list" class="fd-list" role="list"></ul>
+        </div>
+
+        <div id="products-section">
+            <h2 id="products-section-title"></h2>
+            <pre><code id="dumpItems" class="fd-code"></code></pre>
+            <ul id="products-list" class="fd-list" role="list"></ul>
+        </div>
+
+        <div id="product-detail-section">
+            <h2 id="product-detail-section-title"></h2>
+            <pre><code id="dumpProduct" class="fd-code"></code></pre>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="./CorporateAccount.js"></script>
+    <script src="./SalesQuote.js"></script>
+    <script src="./Product.js"></script>
+</body>
+
+</html>
