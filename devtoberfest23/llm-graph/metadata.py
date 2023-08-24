@@ -64,4 +64,3 @@ class Metadata:
 
         access_token = response.json()['access_token']
         return access_token
-    
