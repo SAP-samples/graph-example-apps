@@ -1,11 +1,7 @@
-import os
-from langchain import PromptTemplate
+from logger import CustomFormatter
 import prompt
 import argparse
 import logging
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
-
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
@@ -19,7 +15,7 @@ from langchain.schema import BaseOutputParser
 from template import Template
 from urlParser import UrlParser
 
-
+# Argument Parser
 parser = argparse.ArgumentParser()
 parser.add_argument(
     '-d', '--debug',
@@ -30,30 +26,37 @@ parser.add_argument(
 parser.add_argument(
     '-v', '--verbose',
     help="Be verbose",
-    action="store_const", dest="loglevel", const=logging.INFO,
+    action="store_true",
+    dest="verboseLoggingEnabled",
 )
 
-args = parser.parse_args()    
-logging.basicConfig(level=args.loglevel)
+args = parser.parse_args()  
+
+# Configure custom logger
+handler = logging.StreamHandler()
+handler.setFormatter(CustomFormatter())
+
+logging.getLogger().addHandler(handler)
+
+if args.verboseLoggingEnabled:
+    logging.basicConfig(level=logging.INFO)
 
 message = prompt.string(prompt="Ask a question related to the Data: ")
 
-
+# Run first chain to get the URL and its Json Response
 template = Template.prepareTemplate()
+
 system_message_prompt = SystemMessagePromptTemplate.from_template(template)
+
 human_template = "{text}"
 human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 
-
-memory = ConversationBufferMemory(memory_key="chat_history")
-
 chain = LLMChain(
     llm=ChatOpenAI(),
     prompt=chat_prompt,
-    memory=memory,
-    verbose=True,
+    verbose=args.verboseLoggingEnabled,
     output_parser=UrlParser()
 )
 
@@ -68,14 +71,16 @@ except Exception as e:
         Please find the user message below: \n%(message)s""" %{"error": e, "message": message}
         response = chain.run(text)
     except Exception as e:
-        logging.error ("\n Failed in the second attempt")
+        logging.error ("ßFailed in the second attempt")
         exit()
+
+# Run second chain to convert the JSON response to human readable text
 
 template_2 = Template.prepareTemplateForProcessingJsonResponse(response, message)
 chat_prompt = ChatPromptTemplate.from_messages([SystemMessagePromptTemplate.from_template(template_2), HumanMessagePromptTemplate.from_template("{text}")])
 chain_2 = LLMChain(
     llm=ChatOpenAI(),
-    verbose=True,
+    verbose=args.verboseLoggingEnabled,
     prompt=chat_prompt
 )
 chain_2_response= chain_2.run(message)
