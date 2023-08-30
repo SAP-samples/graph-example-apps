@@ -1,0 +1,25 @@
+{
+    "version": "1.0.0",
+    "entity": "bestrun.FlyingPartner",
+    "label": "Frequent Flyer",
+    "sourceEntities": [
+        { "name": "my.custom.FREQUENT_FLYER" },
+        { "name": "sap.s4.A_BusinessPartner", "join": [["BusinessPartner", "BusinessPartner"]]}],
+    "dicts": { "loyaltyProgramStatus": { "FTL": "Frequent Traveler", "GOLD": "Gold", "SEN": "Senator", "HON": "HON Circle" } },
+    "attributes": [
+        { "name": "id", "source": [ "BusinessPartner" ], "key": true },
+        { "name": "memberId", "source": [ "BusinessPartner" ] },
+        { "name": "name", "source": [ "BusinessPartnerFullName" ], "sourceEntity": "sap.s4.A_BusinessPartner", "type": "String" },
+        { "name": "language", "source": [ "Language" ], "sourceEntity": "sap.s4.A_BusinessPartner" },
+        { "name": "isActive", "transform": "negation", "source": [ "IsMarkedForArchiving" ], "sourceEntity": "sap.s4.A_BusinessPartner", "annotations": { "readonly": true } },
+        { "name": "location[]", "source": [ "to_BusinessPartnerAddress[]" ], "sourceEntity": "sap.s4.A_BusinessPartner" },
+        { "name": "location[].id", "source": [ "to_BusinessPartnerAddress[].AddressID" ], "sourceEntity": "sap.s4.A_BusinessPartner", "key": true },
+        { "name": "location[].city", "source": [ "to_BusinessPartnerAddress[].CityName" ], "sourceEntity": "sap.s4.A_BusinessPartner", "type": "String" },
+        { "name": "location[].country", "source": [ "to_BusinessPartnerAddress[].Country" ], "sourceEntity": "sap.s4.A_BusinessPartner" },
+        { "name": "membershipProgramId", "source": [ "loyaltyProgramId" ], "type": "String" },
+        { "name": "membershipProgramName", "source": [ "loyaltyProgramName" ], "type": "String" },
+        { "name": "membershipStatus", "transform": "dict", "source": [ "loyaltyProgramStatus", "loyaltyProgramStatus" ] },
+        { "name": "membershipPoints", "source": [ "loyaltyCount" ] },
+        { "name": "membershipPintsUnit", "transform": "constant", "source": [ "MILES" ] }
+    ]
+}
