@@ -15,31 +15,13 @@ from langchain.schema import BaseOutputParser
 from template import Template
 from urlParser import UrlParser
 
-# Argument Parser
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    '-d', '--debug',
-    help="Print lots of debugging statements",
-    action="store_const", dest="loglevel", const=logging.DEBUG,
-    default=logging.WARNING,
-)
-parser.add_argument(
-    '-v', '--verbose',
-    help="Be verbose",
-    action="store_true",
-    dest="verboseLoggingEnabled",
-)
-
-args = parser.parse_args()  
-
 # Configure custom logger
 handler = logging.StreamHandler()
 handler.setFormatter(CustomFormatter())
 
 logging.getLogger().addHandler(handler)
+logging.getLogger().setLevel(logging.INFO)
 
-if args.verboseLoggingEnabled:
-    logging.basicConfig(level=logging.INFO)
 
 message = prompt.string(prompt="Ask a question related to the Data: ")
 
@@ -56,7 +38,6 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 chain = LLMChain(
     llm=ChatOpenAI(),
     prompt=chat_prompt,
-    verbose=args.verboseLoggingEnabled,
     output_parser=UrlParser()
 )
 
@@ -71,16 +52,15 @@ except Exception as e:
         Please find the user message below: \n%(message)s""" %{"error": e, "message": message}
         response = chain.run(text)
     except Exception as e:
-        logging.error ("ßFailed in the second attempt")
+        logging.error ("Failed in the second attempt")
         exit()
 
 # Run second chain to convert the JSON response to human readable text
 
-template_2 = Template.prepareTemplateForProcessingJsonResponse(response, message)
+template_2 = Template.prepareTemplateForProcessingJsonResponse(response)
 chat_prompt = ChatPromptTemplate.from_messages([SystemMessagePromptTemplate.from_template(template_2), HumanMessagePromptTemplate.from_template("{text}")])
 chain_2 = LLMChain(
     llm=ChatOpenAI(),
-    verbose=args.verboseLoggingEnabled,
     prompt=chat_prompt
 )
 chain_2_response= chain_2.run(message)
