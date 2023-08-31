@@ -1,7 +1,5 @@
 # Command Line LLM Application for Graph in Integration Suite
 
-## Run 
-
 ### Prerequisites
 * A running Graph intance called as a Business Data Graph: [Reference](https://help.sap.com/docs/graph?locale=en-US)
 * `credentials.json`: The secret binding which is created in BTP. This file must be saved in the root folder of the project
