@@ -8,7 +8,7 @@ import logging
 
 
 llm = OpenAI(temperature=0)
-apis = ["https://us10.graph.sap/api/devtoberfest-backup/my.custom/$metadata", "https://us10.graph.sap/api/devtoberfest-backup/bestrun/$metadata"]
+apis = ["https://us10.graph.sap/api/demo/my.custom/$metadata", "https://us10.graph.sap/api/demo/company/$metadata"]
 
 apiMetadata = ""
 
@@ -47,11 +47,11 @@ class Template:
             metadataString = metadata.fetchApiMetadata(url)
             templatePart2 = templatePart2 + "API %(index)s (URL: %(url)s) \n %(metadataString)s \n" %{"index": index+1, "url":url,  "metadataString": metadataString }
             templatePart2ForLogging = templatePart2ForLogging + "\nAPI %(index)s (URL: %(url)s) \n <xml> ... </xml> \n" %{"index": index+1, "url":url }
-        logging.info("Query Sent to LLM: \n\n" + templatePart1 + templatePart2ForLogging + templatePart3 + "\n\n")
+        logging.info("Query Sent to LLM: \n\n" + templatePart1 + templatePart2ForLogging + templatePart3)
         return templatePart1 + templatePart2 + templatePart3
     
     def prepareTemplateForProcessingJsonResponse(jsonData):
         templatePart1 = "You are a helpful assistant who reads the json response from an http odata rest query. Read the JSON below \n"
         templatePart3 = "\nRespond with a human readable response to the question below based on the json above."
-        logging.info("Query Sent to LLM: \n\n" + templatePart1 + prettify(jsonData) + templatePart3 + "\n\n")
+        logging.info("Query Sent to LLM: \n\n" + templatePart1 + prettify(jsonData) + templatePart3)
         return templatePart1 + json.dumps(jsonData).replace('{', '{{').replace('}','}}') + templatePart3

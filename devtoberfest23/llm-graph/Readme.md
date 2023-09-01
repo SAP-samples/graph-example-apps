@@ -18,8 +18,8 @@ python3 main.py
 
 ## Sample Questions for frequent flyer case 
 
-* *Give me the member name and their city with the maximum membership points*
-* *Give me the membership points and their names for all member which are in the city Palo Alto*
-* *Give me the frequent flyer name with maximum membership points*
+* *Give me the Flying Partner and their city with the maximum membership points*
+* *Give me the membership points and their names for all flying partners which are in the city Konstanz*
+* *Give me the Flying Partner with maximum membership points*
 * *Give me the highest frequent flyer poits value*
 * *Print the loyalty program status with the maximum frequent flyer points*

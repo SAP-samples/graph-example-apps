@@ -9,7 +9,7 @@ class UrlParser(BaseOutputParser):
 
 
     def parse(self, text: str):
-        logging.info("Response received from LLM "+ text)
+        logging.info("Response received from LLM :"+ text)
         """Parse the output of an LLM call."""
         # Fetch the URL using the token 
         tokenFile = 'token.txt'
