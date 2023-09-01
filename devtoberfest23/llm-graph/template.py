@@ -8,9 +8,7 @@ import logging
 
 
 llm = OpenAI(temperature=0)
-apis = ["https://us10.graph.sap/api/flat-bdg/my.custom/$metadata", "https://us10.graph.sap/api/flat-bdg/my.loyalty/$metadata"]
-
-# apis = ["https://us10.graph.sap/api/flat-bdg/my.loyalty/$metadata"]
+apis = ["https://us10.graph.sap/api/devtoberfest-backup/my.custom/$metadata", "https://us10.graph.sap/api/devtoberfest-backup/bestrun/$metadata"]
 
 apiMetadata = ""
 
