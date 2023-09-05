@@ -8,9 +8,7 @@ import logging
 
 
 llm = OpenAI(temperature=0)
-apis = ["https://us10.graph.sap/api/flat-bdg/my.custom/$metadata", "https://us10.graph.sap/api/flat-bdg/my.loyalty/$metadata"]
-
-# apis = ["https://us10.graph.sap/api/flat-bdg/my.loyalty/$metadata"]
+apis = ["https://us10.graph.sap/api/demo/my.custom/$metadata", "https://us10.graph.sap/api/demo/company/$metadata"]
 
 apiMetadata = ""
 
@@ -40,7 +38,7 @@ class Template:
         <Property Name="bbbb" Type="my.url.someComplexTypeButNotCollection"/>
         <NavigationProperty Name="aaaa" Type="my.url.someOtherCollection"/>
         
-        You must use $expand for NavigationProperty with name "xxxx" and with name "aaaa", and not for anmy other fields as they are not NavigationProperties. To use select in the NavigationProperties, use it in the $expand block instead. You must not use $expand for properties with names "bbbb", "id" and "name" as they are properties and not NavigationProperties
+        You must use $expand for NavigationProperty with name "xxxx" and with name "aaaa", and not for any other fields as they are not NavigationProperties. To use select in the NavigationProperties, use it in the $expand block instead. You must not use $expand for properties with names "bbbb", "id" and "name" as they are properties and not NavigationProperties
 
         ONLY print the url and nothing more. If the question is not relevant to the metadata return 'Not found'. The url is created using the entity name"""
         metadata = Metadata()

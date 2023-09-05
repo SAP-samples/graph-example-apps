@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "entity": "bestrun.FlyingPartner",
+    "entity": "company.FlyingPartner",
     "label": "Frequent Flyer",
     "sourceEntities": [
         { "name": "my.custom.FREQUENT_FLYER" },

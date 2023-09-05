@@ -50,6 +50,7 @@ except Exception as e:
         Here are the details: %(error)s
         Please read the error message carefully and the reconstruct the URL. Only print the URL and nothing more
         Please find the user message below: \n%(message)s""" %{"error": e, "message": message}
+        logging.info("Query Sent to LLM: \n\n" + text + "\n\n")
         response = chain.run(text)
     except Exception as e:
         logging.error ("Failed in the second attempt")
