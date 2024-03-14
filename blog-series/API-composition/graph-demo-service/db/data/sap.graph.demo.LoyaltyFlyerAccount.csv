@@ -1,0 +1,9 @@
+userId,loyaltyProgramName,loyaltyProgramStatusId,loyaltyPoints,isMarkedForArchiving
+11,TravelMiles,3,75312,false
+202,TravelMiles,2,25123,false
+203,TravelMiles,4,221465,false
+1018,TravelMiles,1,3420,false
+1000000,TravelMiles,3,75312,false
+1000010,TravelMiles,2,25123,false
+1000011,TravelMiles,4,221465,false
+1000012,TravelMiles,1,3420,false

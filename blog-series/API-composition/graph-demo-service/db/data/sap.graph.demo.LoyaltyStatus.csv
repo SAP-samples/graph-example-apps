@@ -1,0 +1,5 @@
+statusId,statusName,statusCode,pointsRequired
+1,Member,M,0
+2,Traveler,T,5000
+3,Explorer,E,50000
+4,Adventurer,A,100000

@@ -1,0 +1,28 @@
+---
+_schema-version: '3.1'
+ID: graph-demo-loyalty
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install --production
+        - npx cds build --production
+        - cp -r db/data gen/srv/srv/data
+
+modules:
+  - name: graph-demo-loyalty-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      buildpack: nodejs_buildpack
+    build-parameters:
+      builder: npm
+    provides:
+      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+    requires: []

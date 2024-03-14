@@ -1,0 +1,12 @@
+{
+    "requires": {
+        "auth": {
+          "kind": "basic",
+          "users": {
+            "demo": {
+              "password": // basic authentication password for user demo
+            }
+          }
+        }
+    }
+}
