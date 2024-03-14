@@ -6,12 +6,13 @@ A simple Demo CDS OData service with an in-memory database + CSV example data fo
 
 ### Prerequisites
 
-For building and deploying this demo service these tools are required:
+For building, deploying and running this demo service these prerequisites are required:
 
 - [Node.js](https://nodejs.org/en) & npm
 - CAP command-line: `npm i -g @sap/cds-dk`
 - MBT command-line: `npm i -g mbt`
-- Cloud Foundry command-line (optional) - see [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+- Cloud Foundry command-line for deployment (optional) - see [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+- A BTP subaccount with the Cloud Foundry runtime enabled
 
 ### Prepare
 
